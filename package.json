@@ -54,5 +54,8 @@
     "select"
   ],
   "author": "Eduardo Fernandes",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "tailwind-merge": "^2.1.0"
+  }
 }
