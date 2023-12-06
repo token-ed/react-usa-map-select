@@ -90,9 +90,6 @@ export const USAMapSelect = ({
   const handleClick = (event: React.SyntheticEvent<SVGGElement>) =>
     onClick?.(event);
 
-  console.log(USAStateColor)
-  console.log(colorVariants()[USAStateColor])
-
   return (
     <svg
       xmlns='http://www.w3.org/2000/svg'
