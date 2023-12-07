@@ -43,9 +43,6 @@
     "build": "rimraf docs && webpack --color --mode production",
     "build-dev": "rimraf docs && webpack --color --mode development"
   },
-  "prettier": {
-    "singleQuote": true
-  },
   "keywords": [
     "usa",
     "united states",

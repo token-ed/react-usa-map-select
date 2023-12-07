@@ -1,7 +1,8 @@
 {
   "compilerOptions": {
     "allowSyntheticDefaultImports": true,
-    "baseUrl": ".",
+    "forceConsistentCasingInFileNames": true,
+    "baseUrl": "./",
     "declaration": true,
     "esModuleInterop": true,
     "importHelpers": true,
@@ -13,6 +14,7 @@
     "noImplicitThis": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
+    "incremental": true,
     "outDir": "./build/esm",
     "sourceMap": false,
     "strictBindCallApply": true,

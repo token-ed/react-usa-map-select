@@ -5,7 +5,7 @@ import { USAMapSelect } from '../../src';
 
 export const App = () => {
   return (
-    <BrowserRouter basename="react-usa-map-select">
+    <BrowserRouter basename='react-usa-map-select'>
       <AppDesktop />
     </BrowserRouter>
   );
@@ -13,7 +13,7 @@ export const App = () => {
 
 export const AppDesktop: React.FC = () => (
   <USAMapSelect
-    USAStateOnHoverColor="slate"
+    USAStateOnHoverColor='slate'
     showStateNameOnHover
     onClick={event => alert(event.currentTarget.getAttribute('name'))}
   />
