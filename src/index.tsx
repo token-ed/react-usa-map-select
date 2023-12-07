@@ -88,7 +88,6 @@ export const USAMapSelect = ({
       : undefined;
 
   const handleClick = (event: React.SyntheticEvent<SVGGElement>) => {
-    console.log(event.currentTarget.getAttribute('name'));
     onClick?.(event);
   }
 
