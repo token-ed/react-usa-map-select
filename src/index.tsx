@@ -69,7 +69,7 @@ export const USAMapSelect = ({
   USAStateOnHoverStrokeColor,
   stateTextClassname
 }: Props) => {
-  const [usaState, setUsaState] = useState('');
+  const [usaState, setUsaState] = useState<string | null>(null);
   const handleMouseEnter =
     onUSAStateMouseEnter || showStateNameOnHover
       ? (event: React.SyntheticEvent<SVGGElement>) => {
@@ -87,8 +87,10 @@ export const USAMapSelect = ({
       }
       : undefined;
 
-  const handleClick = (event: React.SyntheticEvent<SVGGElement>) =>
+  const handleClick = (event: React.SyntheticEvent<SVGGElement>) => {
+    console.log(event.currentTarget.getAttribute('name'));
     onClick?.(event);
+  }
 
   return (
     <svg
