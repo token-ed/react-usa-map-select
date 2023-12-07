@@ -59,35 +59,35 @@ interface Props {
 }
 
 export const USAMapSelect = ({
- onClick,
- onUSAStateMouseLeave,
- onUSAStateMouseEnter,
- showStateNameOnHover,
- USAStateColor = "gray",
- USAStateTextColor = "slate",
- USAStateOnHoverColor = "slate",
- USAStateOnHoverStrokeColor,
- stateTextClassname
-}: Props) => {
+                              onClick,
+                              onUSAStateMouseLeave,
+                              onUSAStateMouseEnter,
+                              showStateNameOnHover,
+                              USAStateColor = "gray",
+                              USAStateTextColor = "slate",
+                              USAStateOnHoverColor = "slate",
+                              USAStateOnHoverStrokeColor,
+                              stateTextClassname
+                             }: Props) => {
  const [usaState, setUsaState] = useState<string | null>(null);
  const handleMouseEnter =
   onUSAStateMouseEnter || showStateNameOnHover
    ? (event: React.SyntheticEvent<SVGGElement>) => {
-      const usaState = event.currentTarget.getAttribute("name");
-      if (showStateNameOnHover) setUsaState(usaState);
-      onUSAStateMouseEnter?.(event);
-     }
+    const usaState = event.currentTarget.getAttribute("name");
+    if (showStateNameOnHover) setUsaState(usaState);
+    onUSAStateMouseEnter?.(event);
+   }
    : undefined;
 
  const handleMouseLeave =
   onUSAStateMouseLeave || showStateNameOnHover
    ? (event: React.SyntheticEvent<SVGGElement>) => {
-      if (showStateNameOnHover) setUsaState("");
-      onUSAStateMouseLeave?.(event);
-     }
+    if (showStateNameOnHover) setUsaState("");
+    onUSAStateMouseLeave?.(event);
+   }
    : undefined;
 
- const handleClick = () => (event: React.SyntheticEvent<SVGGElement>) => {
+ const handleClick = (event: React.SyntheticEvent<SVGGElement>) => {
   onClick?.(event);
  };
 
