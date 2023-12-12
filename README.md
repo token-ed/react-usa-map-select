@@ -20,34 +20,34 @@ npm install react-usa-map-select
 
 ```jsx 
 const MyComponent = () => {
-  const handleClick = (event) => {
-    // Handle click event
-    console.log(`Clicked on state: ${event.currentTarget.getAttribute('name')}`);
-  };
+ const handleClick = (event) => {
+  // Handle click event
+  console.log(`Clicked on state: ${event.currentTarget.getAttribute('name')}`);
+ };
 
-  const handleMouseEnter = (event) => {
-    // Handle mouse enter event
-    console.log(`Mouse entered state: ${event.currentTarget.getAttribute('name')}`);
-  };
+ const handleMouseEnter = (event) => {
+  // Handle mouse enter event
+  console.log(`Mouse entered state: ${event.currentTarget.getAttribute('name')}`);
+ };
 
-  const handleMouseLeave = () => {
-    // Handle mouse leave event
-    console.log('Mouse left a state');
-  };
+ const handleMouseLeave = () => {
+  // Handle mouse leave event
+  console.log('Mouse left a state');
+ };
 
-  return (
-    <>
-      <h1>Interactive USA Map</h1>
-      <USAMapSelect
-        onClick={handleClick}
-        onUSAStateMouseEnter={handleMouseEnter}
-        onUSAStateMouseLeave={handleMouseLeave}
-        showStateNameOnHover={true}
-        USAStateOnHoverColor="blue"
-        USAStateOnHoverStrokeColor="white"
-      />
-    </>
-  );
+ return (
+  <>
+   <h1>Interactive USA Map</h1>
+   <USAMapSelect
+    onClick={handleClick}
+    onUSAStateMouseEnter={handleMouseEnter}
+    onUSAStateMouseLeave={handleMouseLeave}
+    showStateNameOnHover={true}
+    USAStateOnHoverColor="blue"
+    USAStateOnHoverStrokeColor="white"
+   />
+  </>
+ );
 };
 
 export default MyComponent;
@@ -57,26 +57,29 @@ export default MyComponent;
 
 ## API
 
-| Prop                         | Type                                                  | Default   | Description                                                                                                                                                |
-|------------------------------|-------------------------------------------------------|-----------|------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `onClick`                    | `(event: React.SyntheticEvent<SVGGElement>) => void`  | -         | Callback function triggered on clicking a state.                                                                                                           |
-| `onUSAStateMouseEnter`       | `(event?: React.SyntheticEvent<SVGGElement>) => void` | -         | Callback function triggered on mouse enter over a state.                                                                                                   |
-| `onUSAStateMouseLeave`       | `(event?: React.SyntheticEvent<SVGGElement>) => void` | -         | Callback function triggered on mouse leave from a state.                                                                                                   |
-| `showStateNameOnHover`       | `boolean`                                             | `false`   | Boolean indicating whether to display the state name on hover.                                                                                             |
-| `USAStateTextColor`          | `keyof ReturnType<typeof colorVariants>`              | `slate`   | Color variant for the state text if `showStateNameOnHover` is `true`. Choose from: slate, white, gray, yellow, green, emerald, blue, purple, orange, pink. |
-| `USAStateColor`              | `keyof ReturnType<typeof colorVariants>`              | `gray`    | Color variant for the state. Choose from: slate, white, gray, yellow, green, emerald, blue, purple, orange, pink.                                          |
-| `USAStateOnHoverColor`       | `keyof ReturnType<typeof colorVariants>`              | `slate`   | Color variant for the state on hover. Choose from: slate, white, gray, yellow, green, emerald, blue, purple, orange, pink.                                 |
-| `USAStateOnHoverStrokeColor` | `keyof ReturnType<typeof colorVariants>`              | -         | Stroke color variant for the state on hover. Choose from the same options as `USAStateOnHoverColor`.                                                       |
+| Prop                         | Type                                                  | Default | Description                                                                                                                                                |
+|------------------------------|-------------------------------------------------------|---------|------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `onClick`                    | `(event: React.SyntheticEvent<SVGGElement>) => void`  | -       | Callback function triggered on clicking a state.                                                                                                           |
+| `onUSAStateMouseEnter`       | `(event?: React.SyntheticEvent<SVGGElement>) => void` | -       | Callback function triggered on mouse enter over a state.                                                                                                   |
+| `onUSAStateMouseLeave`       | `(event?: React.SyntheticEvent<SVGGElement>) => void` | -       | Callback function triggered on mouse leave from a state.                                                                                                   |
+| `showStateNameOnHover`       | `boolean`                                             | `false` | Boolean indicating whether to display the state name on hover.                                                                                             |
+| `USAStateTextColor`          | `keyof ReturnType<typeof colorVariants>`              | `slate` | Color variant for the state text if `showStateNameOnHover` is `true`. Choose from: slate, white, gray, yellow, green, emerald, blue, purple, orange, pink. |
+| `USAStateColor`              | `keyof ReturnType<typeof colorVariants>`              | `gray`  | Color variant for the state. Choose from: slate, white, gray, yellow, green, emerald, blue, purple, orange, pink.                                          |
+| `USAStateOnHoverColor`       | `keyof ReturnType<typeof colorVariants>`              | `slate` | Color variant for the state on hover. Choose from: slate, white, gray, yellow, green, emerald, blue, purple, orange, pink.                                 |
+| `USAStateOnHoverStrokeColor` | `keyof ReturnType<typeof colorVariants>`              | -       | Stroke color variant for the state on hover. Choose from the same options as `USAStateOnHoverColor`.                                                       |
+| `USAStatePosition`           | `{ x: string, y: string}`                             | -       | Position of the state name by x and y coordinates in percentage when `showStateNameOnHover` is `true`.                                                     |
+
 ## Styling
 
 The `USAMapSelect` component is built using Tailwind CSS.
 You can customize the styling of the state name that shows on the top of the map by passing in your own Tailwind CSS
 classes as props.
-The following props are available for styling (when `showStateNameOnHover` is true):
+You can also style the svg wrapper element by passing in a class name to the `wrapperClassName` prop.
 
-| Prop            | Type     | Default | Description                                                    |
-|-----------------|----------|---------|----------------------------------------------------------------|
-| `textClassName` | `string` | -       | Class name for the <text> element that renders the state name. |
+| Prop                 | Type     | Default | Description                                                                                         |
+|----------------------|----------|---------|-----------------------------------------------------------------------------------------------------|
+| `stateTextClassname` | `string` | -       | Class name for the <text> element that renders the state name when `showStateNameOnHover` is `true` |
+| `wrapperClassName`   | `string` | -       | Class name for the <svg> element that wraps the map.                                                |
 
 ## License
 
