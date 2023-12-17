@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import { twMerge } from "tailwind-merge";
 
+// TODO: Change path colors of states to use color variants instead of classNames
+// TODO: Add tests
+// TODO:dominant-baseline: center; for text if centered
 const colorVariants = () => ({
  slate: "#1e293b",
  white: "#e5e5e5",
@@ -47,10 +50,10 @@ const hoverColorVariants = (getStrokeColor?: boolean) => ({
   : "hover:fill-pink-400"
 });
 
-interface TextPosition {
+type TextPosition = {
  x: string;
  y: string;
-}
+} | "center"
 
 interface Props {
  USAStateColor?: keyof ReturnType<typeof hoverColorVariants>;
@@ -106,6 +109,18 @@ export const USAMapSelect = ({
   : undefined;
  const onHoverUSAStateColor = hoverColorVariants()[USAStateOnHoverColor];
 
+ let stateTextCentered;
+ let stateTextXPosition;
+ let stateTextYPosition;
+
+ if (USAStatePosition === "center") {
+  stateTextCentered = "middle";
+  stateTextXPosition = "50%";
+  stateTextYPosition = "50%";
+ } else {
+  stateTextXPosition = USAStatePosition?.x;
+  stateTextYPosition = USAStatePosition?.y;
+ }
  return (
   <svg
    xmlns="http://www.w3.org/2000/svg"
@@ -645,8 +660,10 @@ export const USAMapSelect = ({
    />
    {usaState && (
     <text
-     x={USAStatePosition?.x}
-     y={USAStatePosition?.y}
+     x={stateTextXPosition}
+     y={stateTextYPosition}
+     dominantBaseline={stateTextCentered}
+     textAnchor={stateTextCentered}
      className={twMerge("pointer-events-none", stateTextClassname)}
      fill={colorVariants()[USAStateTextColor]}
     >
