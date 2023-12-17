@@ -67,7 +67,7 @@ export default MyComponent;
 | `USAStateColor`              | `keyof ReturnType<typeof colorVariants>`              | `gray`  | Color variant for the state. Choose from: slate, white, gray, yellow, green, emerald, blue, purple, orange, pink.                                          |
 | `USAStateOnHoverColor`       | `keyof ReturnType<typeof colorVariants>`              | `slate` | Color variant for the state on hover. Choose from: slate, white, gray, yellow, green, emerald, blue, purple, orange, pink.                                 |
 | `USAStateOnHoverStrokeColor` | `keyof ReturnType<typeof colorVariants>`              | -       | Stroke color variant for the state on hover. Choose from the same options as `USAStateOnHoverColor`.                                                       |
-| `USAStatePosition`           | `{ x: string, y: string}`                             | -       | Position of the state name by x and y coordinates in percentage when `showStateNameOnHover` is `true`.                                                     |
+| `USAStatePosition`           | `{ x: string, y: string }` or `"center"`              | -       | Position of the state name relative to the SVG wrapper. If `center`, the state name will persist the center position relative to the SVG wrapper.          |      
 
 ## Styling
 
