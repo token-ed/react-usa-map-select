@@ -52,6 +52,26 @@ const MyComponent = () => {
 
 export default MyComponent;
 ```
+### `Important Note on TailwindCSS Integration`
+
+As of the date of publishing this package, TailwindCSS does not support native package resolution for styles. This means that any custom styling provided by this package using TailwindCSS will not automatically be included in your project. To ensure that the TailwindCSS styles from this package are applied correctly, you need to update your TailwindCSS configuration in your project.
+
+Please follow these steps (assuming you've already installed TailwindCSS and created a configuration file):
+
+1. **Update your tailwind.config.js file** to include the paths to the components of this package:
+
+```js
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: [
+    ...
+    "./node_modules/react-terminal-emulator-ui/**/*.{js,ts,jsx,tsx}", // Add this line,
+    ...
+  ],
+};
+```
+
+For more information refer to: https://tailwindcss.com/docs/content-configuration#working-with-third-party-libraries
 
 ## Props
 
