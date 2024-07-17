@@ -4,7 +4,7 @@ The `USAMapSelect` component is a React SVG map of the United States of Americca
 allows you to highlight and interact with individual states, providing callbacks for mouse events and some customization
 options for styling.
 
-![USA Map](https://s2.ezgif.com/tmp/ezgif-2-bcb48d6f06.gif)
+![2024-07-17 22-13-52](https://github.com/user-attachments/assets/90097abe-acf8-4aee-ac9a-42b925f0ad1d)
 
 ## Live example
 
